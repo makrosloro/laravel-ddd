@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
         Tag::factory()->count(20)->create();
         $posts = Post::factory()->count(200)->create();
         $posts->each(function (Post $post) {
-//            $post->tags()->saveMany(Tag::all()->random(3));
+            $post->tags()->saveMany(Tag::all()->random(3));
         });
     }
 }
