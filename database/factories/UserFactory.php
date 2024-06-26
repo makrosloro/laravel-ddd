@@ -14,6 +14,7 @@ use Laravel\Jetstream\Features;
  */
 class UserFactory extends Factory
 {
+    protected $model = User::class;
     /**
      * The current password being used by the factory.
      */

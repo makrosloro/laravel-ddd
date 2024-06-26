@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
+use Domain\Shared\Models\User;
 use Domain\Blog\Models\Category;
 use Domain\Blog\Models\Post;
 use Domain\Blog\Models\Tag;
-use Domain\Shared\Models\User;
 use Illuminate\Database\Seeder;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
         Tag::factory()->count(20)->create();
         $posts = Post::factory()->count(200)->create();
         $posts->each(function (Post $post) {
-            $post->tags()->saveMany(Tag::all()->random(3));
+//            $post->tags()->saveMany(Tag::all()->random(3));
         });
     }
 }
