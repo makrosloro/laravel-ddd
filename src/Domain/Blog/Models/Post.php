@@ -27,7 +27,6 @@ class Post extends Model
         static::addGlobalScope(UserScope::class);
     }
 
-
     protected static function newFactory()
     {
         return app(PostFactory::class);
