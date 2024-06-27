@@ -3,6 +3,7 @@
 namespace Domain\Blog\Models;
 
 use Database\Factories\PostFactory;
+use Domain\Shared\Models\Scopes\UserScope;
 use Domain\Shared\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -20,6 +21,12 @@ class Post extends Model
         'title',
         'body'
     ];
+
+    protected static function booted(): void
+    {
+        static::addGlobalScope(UserScope::class);
+    }
+
 
     protected static function newFactory()
     {
