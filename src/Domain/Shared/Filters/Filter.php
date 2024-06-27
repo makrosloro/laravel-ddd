@@ -10,6 +10,6 @@ abstract class Filter
     {
     }
 
-    abstract public function handle(Builder $items, \Closure $next): Builder;
+    abstract public function handle(Builder $builder, \Closure $next): Builder;
 
 }
